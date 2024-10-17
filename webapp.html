@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen Share and Audio Capture</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            color: #333;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        video {
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        a {
+            display: none;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Screen Share and Audio Capture</h1>
+    <button id="start-recording">Start Recording</button>
+    <button id="stop-recording" disabled>Stop Recording</button>
+    <video id="screen-video" width="640" height="480" autoplay></video>
+    <a id="download-link" href="#" download="recorded-audio.webm">Download Recorded Audio</a>
+
+    <script>
+        let screenStream;
+        let mediaRecorder;
+        let audioBlob;
+
+        document.getElementById('start-recording').addEventListener('click', async () => {
+            try {
+                // Request access to the user's screen and audio output
+                screenStream = await navigator.mediaDevices.getDisplayMedia({ video: true, audio: true });
+
+                // Create a video element to display the screen share
+                const screenVideo = document.getElementById('screen-video');
+                screenVideo.srcObject = screenStream;
+                screenVideo.play();
+
+                // Create a media recorder to capture the audio output
+                mediaRecorder = new MediaRecorder(screenStream);
+
+                // Start recording
+                mediaRecorder.start();
+                document.getElementById('start-recording').disabled = true;
+                document.getElementById('stop-recording').disabled = false;
+
+                // Stop recording after 10 seconds
+                setTimeout(() => {
+                    mediaRecorder.stop();
+                }, 10000);
+
+                // Get the recorded audio
+                mediaRecorder.ondataavailable = (event) => {
+                    audioBlob = new Blob([event.data], { type: 'audio/webm' });
+                    const downloadLink = document.getElementById('download-link');
+                    downloadLink.href = URL.createObjectURL(audioBlob);
+                    downloadLink.style.display = 'block'; // Show the download link
+                };
+
+                // Stop screen share when recording stops
+                mediaRecorder.onstop = () => {
+                    screenStream.getTracks().forEach(track => track.stop());
+                    document.getElementById('start-recording').disabled = false;
+                    document.getElementById('stop-recording').disabled = true;
+                };
+            } catch (error) {
+                console.error('Error accessing screen and audio output:', error);
+            }
+        });
+
+        document.getElementById('stop-recording').addEventListener('click', () => {
+            mediaRecorder.stop();
+        });
+    </script>
+</body>
+</html>
