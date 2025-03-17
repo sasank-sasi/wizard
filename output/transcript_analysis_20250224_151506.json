@@ -1,0 +1,24 @@
+{
+  "transcript": "Hello everyone, welcome to our weekly meeting on March 15th, 2024. Our main action items from last week: 1. John needs to send the report to sarah.smith@company.com 2. Meeting with clients scheduled for March 20th at 2 PM 3. Project deadline is set for April 1st, 2024 Please contact support@company.com for any technical issues. Next meeting is scheduled for March 22nd, 2024. Important: Return ONLY valid JSON, no markdown or additional text.",
+  "summary": "Weekly meeting recap and action items",
+  "key_points": [
+    "John needs to send report to sarah.smith@company.com",
+    "Meeting with clients on March 20th",
+    "Project deadline on April 1st"
+  ],
+  "dates": [
+    "April 1st, 2024",
+    "March 20th, 2024",
+    "March 22nd, 2024",
+    "March 15th, 2024"
+  ],
+  "emails": [
+    "sarah.smith@company.com",
+    "support@company.com"
+  ],
+  "action_items": [
+    "John needs to send report",
+    "Meeting with clients",
+    "Project deadline"
+  ]
+}
