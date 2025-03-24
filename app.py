@@ -3,7 +3,9 @@ import json
 import logging
 from typing import Dict, Any, Optional
 from datetime import datetime
-from flask import Flask, request, jsonify
+from fastapi import FastAPI, File, UploadFile, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
 from transformers import WhisperProcessor, WhisperForConditionalGeneration
 import torch
 import librosa
@@ -20,8 +22,21 @@ logging.basicConfig(
     ]
 )
 
-# Initialize Flask app
-app = Flask(__name__)
+# Initialize FastAPI app with CORS
+app = FastAPI(
+    title="Audio Transcript Analyzer",
+    description="API for transcribing and analyzing audio files",
+    version="1.0.0"
+)
+
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Load environment variables
 load_dotenv()
@@ -34,7 +49,15 @@ whisper_processor = WhisperProcessor.from_pretrained("openai/whisper-small")
 whisper_model = WhisperForConditionalGeneration.from_pretrained("openai/whisper-small")
 groq_client = Groq(api_key=GROQ_API_KEY)
 
-def transcribe_audio(file_path: str) -> str:
+# Constants
+ALLOWED_EXTENSIONS = {'wav', 'mp3', 'ogg', 'm4a'}
+MAX_CONTENT_LENGTH = 16 * 1024 * 1024  # 16MB max file size
+
+def allowed_file(filename: str) -> bool:
+    """Check if file extension is allowed"""
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+async def transcribe_audio(file_path: str) -> str:
     """Transcribe audio file using Whisper model"""
     try:
         # Load and process audio
@@ -57,9 +80,9 @@ def transcribe_audio(file_path: str) -> str:
 
     except Exception as e:
         logging.error(f"Transcription error: {str(e)}")
-        raise
+        raise HTTPException(status_code=500, detail=f"Transcription failed: {str(e)}")
 
-def analyze_transcript(transcript: str) -> Dict[str, Any]:
+async def analyze_transcript(transcript: str) -> Dict[str, Any]:
     """Analyze transcript using Groq API"""
     prompt = f"""
     Analyze this transcript and provide a JSON response with exactly this structure:
@@ -78,7 +101,6 @@ def analyze_transcript(transcript: str) -> Dict[str, Any]:
     """
 
     try:
-        # Get completion from Groq
         chat_completion = groq_client.chat.completions.create(
             messages=[
                 {
@@ -94,7 +116,6 @@ def analyze_transcript(transcript: str) -> Dict[str, Any]:
             temperature=0.1
         )
 
-        # Parse and validate response
         response = chat_completion.choices[0].message.content.strip()
         analysis = json.loads(response)
 
@@ -108,23 +129,20 @@ def analyze_transcript(transcript: str) -> Dict[str, Any]:
 
     except Exception as e:
         logging.error(f"Analysis error: {str(e)}")
-        raise
+        raise HTTPException(status_code=500, detail=f"Analysis failed: {str(e)}")
 
-def save_analysis(analysis: Dict[str, Any], filename: str) -> str:
+async def save_analysis(analysis: Dict[str, Any], filename: str) -> str:
     """Save analysis results to JSON file"""
     try:
-        # Create output directory
         output_dir = os.path.join(os.getcwd(), "output")
         os.makedirs(output_dir, exist_ok=True)
 
-        # Generate output path with timestamp
         timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
         output_path = os.path.join(
             output_dir,
             f"{filename}_{timestamp}.json"
         )
 
-        # Save analysis
         with open(output_path, 'w', encoding='utf-8') as f:
             json.dump(analysis, f, indent=2, ensure_ascii=False)
 
@@ -132,53 +150,74 @@ def save_analysis(analysis: Dict[str, Any], filename: str) -> str:
 
     except Exception as e:
         logging.error(f"Save error: {str(e)}")
-        raise
+        raise HTTPException(status_code=500, detail=f"Failed to save analysis: {str(e)}")
 
-@app.route('/analyze-audio', methods=['POST'])
-def analyze_audio():
+@app.post("/analyze-audio", response_class=JSONResponse)
+async def analyze_audio(file: UploadFile = File(...)):
     """Handle audio file upload and analysis"""
     try:
-        # Validate request
-        if 'file' not in request.files:
-            return jsonify({"error": "No file uploaded"}), 400
+        # Validate file
+        if not file.filename:
+            raise HTTPException(status_code=400, detail="No file selected")
+            
+        if not allowed_file(file.filename):
+            raise HTTPException(
+                status_code=400, 
+                detail=f"Invalid file type. Allowed types: {', '.join(ALLOWED_EXTENSIONS)}"
+            )
 
-        file = request.files['file']
-        if file.filename == '':
-            return jsonify({"error": "No file selected"}), 400
+        # Create temp directory
+        temp_dir = os.path.join(os.getcwd(), "temp")
+        os.makedirs(temp_dir, exist_ok=True)
 
-        # Save uploaded file temporarily
-        temp_path = os.path.join("/tmp", file.filename)
-        file.save(temp_path)
+        # Save uploaded file
+        temp_path = os.path.join(temp_dir, file.filename)
+        content = await file.read()
+        with open(temp_path, "wb") as buffer:
+            buffer.write(content)
 
         try:
             # Process audio file
-            transcript = transcribe_audio(temp_path)
-            analysis = analyze_transcript(transcript)
-
+            transcript = await transcribe_audio(temp_path)
+            analysis = await analyze_transcript(transcript)
+            
             # Save results
-            output_path = save_analysis(
+            output_path = await save_analysis(
                 analysis,
                 os.path.splitext(file.filename)[0]
             )
 
-            # Return results
-            return jsonify({
-                "success": True,
-                "analysis": analysis,
-                "saved_to": output_path
-            })
+            return JSONResponse(
+                content={
+                    "status": "success",
+                    "transcript": transcript,
+                    "analysis": analysis,
+                    "output_file": output_path
+                },
+                status_code=200
+            )
 
         finally:
             # Clean up temporary file
             if os.path.exists(temp_path):
                 os.remove(temp_path)
 
+    except HTTPException as he:
+        return JSONResponse(
+            content={"status": "error", "detail": he.detail},
+            status_code=he.status_code
+        )
     except Exception as e:
         logging.error(f"Request processing error: {str(e)}")
-        return jsonify({
-            "error": "Processing failed",
-            "details": str(e)
-        }), 500
+        return JSONResponse(
+            content={"status": "error", "detail": str(e)},
+            status_code=500
+        )
 
-if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+def start():
+    """Start the FastAPI server"""
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
+
+if __name__ == "__main__":
+    start()

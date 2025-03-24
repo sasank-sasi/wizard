@@ -11,3 +11,33 @@
 2025-02-24 15:18:42,463 - INFO - Analysis completed successfully
 2025-03-17 14:18:09,673 - INFO - Processing transcript and saving to: /Users/sasanksasi/Downloads/project/wizard/output/transcript_analysis_20250317_141809.json
 2025-03-17 14:18:09,674 - ERROR - Fatal error: name 'transcript' is not defined
+2025-03-17 14:32:00,366 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-17 14:32:00,366 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-17 14:32:00,367 - INFO -  * Restarting with stat
+2025-03-17 14:32:05,320 - WARNING -  * Debugger is active!
+2025-03-17 14:32:05,332 - INFO -  * Debugger PIN: 491-071-532
+2025-03-17 14:34:18,730 - INFO - 127.0.0.1 - - [17/Mar/2025 14:34:18] "[33mGET / HTTP/1.1[0m" 404 -
+2025-03-17 14:34:18,975 - INFO - 127.0.0.1 - - [17/Mar/2025 14:34:18] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-17 14:34:34,325 - INFO - 127.0.0.1 - - [17/Mar/2025 14:34:34] "[31m[1mGET /analyze-audio HTTP/1.1[0m" 405 -
+2025-03-17 14:37:05,312 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-17 14:37:05,312 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-17 14:37:05,313 - INFO -  * Restarting with stat
+2025-03-17 14:37:10,570 - WARNING -  * Debugger is active!
+2025-03-17 14:37:10,591 - INFO -  * Debugger PIN: 491-071-532
+2025-03-17 14:39:50,548 - INFO -  * Detected change in '/Users/sasanksasi/Downloads/project/wizard/test.py', reloading
+2025-03-17 14:39:51,185 - INFO -  * Restarting with stat
+2025-03-17 14:39:56,723 - WARNING -  * Debugger is active!
+2025-03-17 14:39:56,733 - INFO -  * Debugger PIN: 491-071-532
+2025-03-17 14:43:05,149 - INFO -  * Detected change in '/Users/sasanksasi/Downloads/project/wizard/app.py', reloading
+2025-03-17 14:43:05,678 - INFO -  * Restarting with stat
+2025-03-17 14:43:11,105 - WARNING -  * Debugger is active!
+2025-03-17 14:43:11,119 - INFO -  * Debugger PIN: 491-071-532
+2025-03-17 14:43:31,477 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-17 14:43:31,477 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-17 14:43:31,478 - INFO -  * Restarting with stat
+2025-03-17 14:43:38,499 - WARNING -  * Debugger is active!
+2025-03-17 14:43:38,510 - INFO -  * Debugger PIN: 491-071-532
+2025-03-17 15:06:41,908 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
