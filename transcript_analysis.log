@@ -394,3 +394,167 @@ Response: Here is the analysis in JSON format:
 2025-03-25 17:00:13,568 - INFO - Processing audio file: /var/folders/57/dmb6w3ys4376hkdxj2pvws380000gn/T/annual meeting.wav.norm.wav
 2025-03-25 17:02:01,306 - INFO - Transcription completed: 7434 characters
 2025-03-25 17:02:02,882 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-26 02:02:39,438 - ERROR - Form data requires "python-multipart" to be installed. 
+You can install "python-multipart" with: 
+
+pip install python-multipart
+
+2025-03-26 02:19:34,947 - INFO - Use pytorch device_name: mps
+2025-03-26 02:19:34,947 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-26 02:20:26,945 - INFO - Use pytorch device_name: mps
+2025-03-26 02:20:26,946 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-26 02:21:25,528 - INFO - Use pytorch device_name: mps
+2025-03-26 02:21:25,533 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-26 02:21:44,208 - ERROR - Error loading meeting data: Could not import faiss python package. Please install it with `pip install faiss-gpu` (for CUDA supported GPU) or `pip install faiss-cpu` (depending on Python version).
+2025-03-26 02:21:44,208 - ERROR - Error answering question: Meeting data not found for ID: annual meeting
+2025-03-26 02:22:51,543 - ERROR - Error loading meeting data: 'participants'
+2025-03-26 02:22:51,543 - ERROR - Error answering question: Meeting data not found for ID: annual meeting_20250325_160932
+2025-03-26 02:24:11,733 - INFO - Use pytorch device_name: mps
+2025-03-26 02:24:11,734 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-26 02:24:51,026 - INFO - Use pytorch device_name: mps
+2025-03-26 02:24:51,028 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-26 02:25:06,188 - INFO - Loading meeting data from: annual meeting_20250325_160932.json
+2025-03-26 02:25:06,190 - ERROR - Error loading meeting data: 'participants'
+2025-03-26 02:25:06,190 - ERROR - Error answering question: Meeting data not found for ID: annual meeting_20250325_160932
+2025-03-26 02:25:18,301 - INFO - Loading meeting data from: annual meeting_20250325_160932.json
+2025-03-26 02:25:18,302 - ERROR - Error loading meeting data: 'participants'
+2025-03-26 02:25:18,302 - ERROR - Error answering question: Meeting data not found for ID: annual meeting_20250325_160932
+2025-03-26 02:25:37,324 - INFO - Loading meeting data from: annual meeting_20250325_170202.json
+2025-03-26 02:25:38,492 - ERROR - Error loading meeting data: Could not import faiss python package. Please install it with `pip install faiss-gpu` (for CUDA supported GPU) or `pip install faiss-cpu` (depending on Python version).
+2025-03-26 02:25:38,492 - ERROR - Error answering question: Meeting data not found for ID: annual meeting
+2025-03-26 02:28:31,083 - INFO - Use pytorch device_name: mps
+2025-03-26 02:28:31,083 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-26 02:29:14,448 - INFO - Use pytorch device_name: mps
+2025-03-26 02:29:14,450 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-26 02:29:28,353 - INFO - Available files: ['harvard_20250325_160713.json', 'transcript_analysis_20250224_151506.json', 'transcript_analysis_20250224_151841.json', 'harvard_20250317_150641.json', 'annual meeting_20250325_170202.json']
+2025-03-26 02:29:28,354 - INFO - Loading meeting data from: annual meeting_20250325_170202.json
+2025-03-26 02:29:29,064 - ERROR - Error loading meeting data: Could not import faiss python package. Please install it with `pip install faiss-gpu` (for CUDA supported GPU) or `pip install faiss-cpu` (depending on Python version).
+2025-03-26 02:29:29,064 - ERROR - Error answering question: Meeting data not found for ID: annual meeting
+2025-03-26 02:30:13,450 - INFO - Use pytorch device_name: mps
+2025-03-26 02:30:13,451 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-26 02:30:46,865 - INFO - Use pytorch device_name: mps
+2025-03-26 02:30:46,868 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-26 02:31:35,740 - INFO - Available files: ['harvard_20250325_160713.json', 'transcript_analysis_20250224_151506.json', 'transcript_analysis_20250224_151841.json', 'harvard_20250317_150641.json', 'annual meeting_20250325_170202.json']
+2025-03-26 02:31:35,741 - INFO - Loading meeting data from: annual meeting_20250325_170202.json
+2025-03-26 02:31:36,309 - ERROR - Error loading meeting data: Could not import faiss python package. Please install it with `pip install faiss-gpu` (for CUDA supported GPU) or `pip install faiss-cpu` (depending on Python version).
+2025-03-26 02:31:36,310 - ERROR - Error answering question: Meeting data not found for ID: annual meeting_20250325_170202
+2025-03-26 02:33:15,761 - INFO - Available files: ['harvard_20250325_160713.json', 'transcript_analysis_20250224_151506.json', 'transcript_analysis_20250224_151841.json', 'harvard_20250317_150641.json', 'annual meeting_20250325_170202.json']
+2025-03-26 02:33:15,762 - INFO - Loading meeting data from: annual meeting_20250325_170202.json
+2025-03-26 02:33:16,129 - INFO - Loading faiss.
+2025-03-26 02:33:17,308 - INFO - Successfully loaded faiss.
+2025-03-26 02:33:17,312 - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes.
+2025-03-26 02:33:17,320 - INFO - Successfully loaded meeting data for ID: annual meeting_20250325_170202
+2025-03-26 02:33:17,335 - ERROR - Error answering question: 2 validation errors for LLMChain
+llm.is-instance[Runnable]
+  Input should be an instance of Runnable [type=is_instance_of, input_value=<groq.Groq object at 0x3dcfbba50>, input_type=Groq]
+    For further information visit https://errors.pydantic.dev/2.10/v/is_instance_of
+llm.is-instance[Runnable]
+  Input should be an instance of Runnable [type=is_instance_of, input_value=<groq.Groq object at 0x3dcfbba50>, input_type=Groq]
+    For further information visit https://errors.pydantic.dev/2.10/v/is_instance_of
+2025-03-26 02:39:54,171 - INFO - Use pytorch device_name: mps
+2025-03-26 02:39:54,171 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-26 02:40:53,941 - INFO - Use pytorch device_name: mps
+2025-03-26 02:40:53,943 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-26 02:41:45,539 - INFO - Use pytorch device_name: mps
+2025-03-26 02:41:45,539 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-26 02:42:34,586 - INFO - Use pytorch device_name: mps
+2025-03-26 02:42:34,588 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-26 02:43:03,276 - INFO - Available files: ['harvard_20250325_160713.json', 'transcript_analysis_20250224_151506.json', 'transcript_analysis_20250224_151841.json', 'harvard_20250317_150641.json', 'annual meeting_20250325_170202.json']
+2025-03-26 02:43:03,276 - ERROR - No meeting data found for ID: annual_meeting
+2025-03-26 02:43:03,276 - ERROR - Tried patterns: ['annual_meeting', 'annual_meeting', 'annual_meeting', 'annual_meeting']
+2025-03-26 02:43:03,276 - ERROR - Error answering question: Meeting data not found for ID: annual_meeting
+2025-03-26 02:43:24,857 - INFO - Available files: ['harvard_20250325_160713.json', 'transcript_analysis_20250224_151506.json', 'transcript_analysis_20250224_151841.json', 'harvard_20250317_150641.json', 'annual meeting_20250325_170202.json']
+2025-03-26 02:43:24,858 - INFO - Loading meeting data from: annual meeting_20250325_170202.json
+2025-03-26 02:43:25,625 - INFO - Loading faiss.
+2025-03-26 02:43:25,922 - INFO - Successfully loaded faiss.
+2025-03-26 02:43:25,930 - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes.
+2025-03-26 02:43:25,949 - INFO - Successfully loaded meeting data for ID: annual meeting_20250325_170202
+2025-03-26 02:43:25,963 - ERROR - Error answering question: 1 validation error for StuffDocumentsChain
+  Value error, document_variable_name context was not found in llm_chain input_variables: ['question'] [type=value_error, input_value={'llm_chain': LLMChain(ve...None, 'callbacks': None}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/value_error
+2025-03-26 02:46:19,249 - INFO - Use pytorch device_name: mps
+2025-03-26 02:46:19,249 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-26 02:47:15,919 - INFO - Use pytorch device_name: mps
+2025-03-26 02:47:15,921 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-26 02:48:24,500 - INFO - Use pytorch device_name: mps
+2025-03-26 02:48:24,500 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-26 02:49:07,757 - INFO - Use pytorch device_name: mps
+2025-03-26 02:49:07,757 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-26 02:49:59,965 - INFO - Use pytorch device_name: mps
+2025-03-26 02:49:59,968 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-26 02:50:12,257 - INFO - Available files: ['harvard_20250325_160713.json', 'transcript_analysis_20250224_151506.json', 'transcript_analysis_20250224_151841.json', 'harvard_20250317_150641.json', 'annual meeting_20250325_170202.json']
+2025-03-26 02:50:12,258 - INFO - Loading meeting data from: annual meeting_20250325_170202.json
+2025-03-26 02:50:13,597 - INFO - Loading faiss.
+2025-03-26 02:50:14,446 - INFO - Successfully loaded faiss.
+2025-03-26 02:50:14,467 - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes.
+2025-03-26 02:50:14,510 - INFO - Successfully loaded meeting data for ID: annual meeting_20250325_170202
+2025-03-26 02:50:16,780 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-03-26 02:50:16,783 - ERROR - Error answering question: Error code: 400 - {'error': {'message': 'The model `mixtral-8x7b-32768` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2025-03-26 02:53:10,929 - INFO - CUDA not available - using CPU FAISS
+2025-03-26 02:57:24,804 - INFO - CUDA not available - using CPU FAISS
+2025-03-26 02:59:47,013 - INFO - Using device: cpu for embeddings
+2025-03-26 02:59:47,212 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-26 03:00:31,251 - INFO - Using device: cpu for embeddings
+2025-03-26 03:00:31,271 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-26 03:01:13,710 - INFO - Available files: ['harvard_20250325_160713.json', 'transcript_analysis_20250224_151506.json', 'transcript_analysis_20250224_151841.json', 'harvard_20250317_150641.json', 'annual meeting_20250325_170202.json']
+2025-03-26 03:01:13,711 - INFO - Loading meeting data from: annual meeting_20250325_170202.json
+2025-03-26 03:01:13,982 - ERROR - Error loading meeting data: 'MeetingRAG' object has no attribute 'use_gpu'
+2025-03-26 03:01:13,983 - ERROR - Error answering question: Meeting data not found for ID: annual meeting_20250325_170202
+2025-03-26 03:01:56,734 - INFO - Available files: ['harvard_20250325_160713.json', 'transcript_analysis_20250224_151506.json', 'transcript_analysis_20250224_151841.json', 'harvard_20250317_150641.json', 'annual meeting_20250325_170202.json']
+2025-03-26 03:01:56,734 - INFO - Loading meeting data from: annual meeting_20250325_170202.json
+2025-03-26 03:01:56,807 - ERROR - Error loading meeting data: 'MeetingRAG' object has no attribute 'use_gpu'
+2025-03-26 03:01:56,807 - ERROR - Error answering question: Meeting data not found for ID: annual meeting
+2025-03-26 03:02:29,587 - INFO - Available files: ['harvard_20250325_160713.json', 'transcript_analysis_20250224_151506.json', 'transcript_analysis_20250224_151841.json', 'harvard_20250317_150641.json', 'annual meeting_20250325_170202.json']
+2025-03-26 03:02:29,587 - INFO - Loading meeting data from: annual meeting_20250325_170202.json
+2025-03-26 03:02:29,648 - ERROR - Error loading meeting data: 'MeetingRAG' object has no attribute 'use_gpu'
+2025-03-26 03:02:29,648 - ERROR - Error answering question: Meeting data not found for ID: annual meeting_20250325_170202
+2025-03-26 03:04:07,833 - ERROR - Error during cleanup: 'MeetingRAG' object has no attribute 'use_gpu'
+2025-03-26 03:04:54,728 - INFO - Using device: cpu for embeddings
+2025-03-26 03:04:54,922 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-26 03:05:51,837 - INFO - Using device: cpu for embeddings
+2025-03-26 03:05:51,889 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-26 03:06:02,332 - INFO - Available files: ['harvard_20250325_160713.json', 'transcript_analysis_20250224_151506.json', 'transcript_analysis_20250224_151841.json', 'harvard_20250317_150641.json', 'annual meeting_20250325_170202.json']
+2025-03-26 03:06:02,334 - INFO - Loading meeting data from: annual meeting_20250325_170202.json
+2025-03-26 03:06:02,722 - INFO - Successfully loaded meeting data for ID: annual meeting_20250325_170202
+2025-03-26 03:06:04,019 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-26 03:06:04,101 - ERROR - Error answering question: Got multiple output keys: dict_keys(['answer', 'source_documents']), cannot determine which to store in memory. Please set the 'output_key' explicitly.
+2025-03-26 03:08:23,377 - INFO - Using device: cpu for embeddings
+2025-03-26 03:08:23,567 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-26 03:08:56,272 - INFO - Using device: cpu for embeddings
+2025-03-26 03:08:56,320 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-26 03:09:09,807 - INFO - Available files: ['harvard_20250325_160713.json', 'transcript_analysis_20250224_151506.json', 'transcript_analysis_20250224_151841.json', 'harvard_20250317_150641.json', 'annual meeting_20250325_170202.json']
+2025-03-26 03:09:09,810 - INFO - Loading meeting data from: annual meeting_20250325_170202.json
+2025-03-26 03:09:10,968 - INFO - Successfully loaded meeting data for ID: annual meeting_20250325_170202
+2025-03-26 03:09:13,218 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-26 03:09:13,268 - INFO - Question answered for meeting annual meeting_20250325_170202: What were the key decisions made in this meeting?...
+2025-03-26 03:11:34,520 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-26 03:11:35,337 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-26 03:11:35,339 - INFO - Question answered for meeting annual meeting_20250325_170202: who is Mr. Kim Lambert?...
+2025-03-26 03:13:16,326 - INFO - Using device: cpu for embeddings
+2025-03-26 03:13:16,504 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-26 03:13:52,378 - INFO - Using device: cpu for embeddings
+2025-03-26 03:13:52,427 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-26 03:17:32,192 - INFO - Using device: cpu for embeddings
+2025-03-26 03:17:32,368 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-26 03:18:08,259 - INFO - Using device: cpu for embeddings
+2025-03-26 03:18:08,309 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-26 03:20:09,242 - INFO - Audio preprocessed: annual meeting.wav.norm.wav
+2025-03-26 03:20:09,245 - INFO - Processing audio file: /var/folders/57/dmb6w3ys4376hkdxj2pvws380000gn/T/annual meeting.wav.norm.wav
+2025-03-26 03:21:47,711 - INFO - Transcription completed: 7441 characters
+2025-03-26 03:21:49,439 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-26 03:24:14,490 - INFO - Using device: cpu for embeddings
+2025-03-26 03:24:14,675 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-26 03:25:06,074 - INFO - Using device: cpu for embeddings
+2025-03-26 03:25:06,124 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-26 03:27:43,910 - INFO - Using device: cpu for embeddings
+2025-03-26 03:27:44,106 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-26 03:28:27,843 - INFO - Using device: cpu for embeddings
+2025-03-26 03:28:27,891 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-26 03:29:14,833 - INFO - Available files: ['harvard_20250325_160713.json', 'transcript_analysis_20250224_151506.json', 'transcript_analysis_20250224_151841.json', 'annual meeting_20250326_032149.json', 'harvard_20250317_150641.json', 'annual meeting_20250325_170202.json']
+2025-03-26 03:29:14,833 - INFO - Loading meeting data from: annual meeting_20250326_032149.json
+2025-03-26 03:29:15,286 - INFO - Successfully loaded meeting data for ID: annual meeting_20250326_032149
+2025-03-26 03:29:16,317 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-26 03:29:16,329 - INFO - Question answered for meeting annual meeting_20250326_032149: What were the key decisions made in this meeting?...
+2025-03-26 03:30:18,565 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-26 03:30:19,114 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-26 03:30:19,116 - INFO - Question answered for meeting annual meeting_20250326_032149: Who is  Mr. Morale?...

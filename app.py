@@ -18,6 +18,8 @@ from vosk import Model, KaldiRecognizer
 import wave
 import soundfile as sf
 import resampy
+from rag import MeetingRAG
+from pydantic import BaseModel
 
 # Configure logging
 logging.basicConfig(
@@ -147,7 +149,7 @@ async def analyze_transcript(transcript: str) -> Dict[str, Any]:
         "You are an AI meeting assistant analyzing a transcript from an online meeting. "
         "Analyze this meeting transcript and return a JSON object with exactly this structure:\n\n"
         "{\n"
-        '  "transcript": "<cleaned meeting transcript>",\n'
+        f'  "transcript": "{escaped_transcript}",\n'  # Store actual transcript
         '  "summary": "<comprehensive 5-10 sentence summary of the meeting>",\n'
         '  "key_points": [\n'
         '    "Key decisions made",\n'
@@ -221,7 +223,7 @@ async def analyze_transcript(transcript: str) -> Dict[str, Any]:
                 messages=[system_message, user_message],
                 model="llama3-8b-8192",
                 temperature=0.1,
-                max_tokens=2048,
+                max_tokens=8192,
                 response_format={"type": "json_object"}  # Request JSON response
             )
         except Exception as api_error:
@@ -462,6 +464,60 @@ async def analyze_audio(file: UploadFile = File(...)):
                     os.remove(temp_file)
             except Exception as e:
                 logging.warning(f"Failed to remove temporary file {temp_file}: {str(e)}")
+
+# Add the question request model
+class QuestionRequest(BaseModel):
+    meeting_id: str
+    question: str
+
+# Initialize RAG system with Groq client
+meeting_rag = MeetingRAG(groq_client)
+
+# Add the question-answering endpoint
+@app.post("/ask-question")
+async def ask_question(request: QuestionRequest):
+    """Answer questions about a specific meeting"""
+    try:
+        result = await meeting_rag.answer_question(
+            request.meeting_id,
+            request.question
+        )
+        
+        return JSONResponse(
+            content={
+                "status": "success",
+                "question": request.question,
+                "answer": result["answer"],
+                "sources": result["sources"]
+            },
+            status_code=200
+        )
+        
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail=str(e)
+        )
+
+@app.post("/clear-context/{meeting_id}")
+async def clear_context(meeting_id: str):
+    """Clear conversation history for a meeting"""
+    success = await meeting_rag.clear_meeting_context(meeting_id)
+    if success:
+        return JSONResponse(
+            content={"status": "success", "message": "Context cleared"},
+            status_code=200
+        )
+    else:
+        raise HTTPException(
+            status_code=500,
+            detail="Failed to clear context"
+        )
+
+@app.on_event("shutdown")
+async def shutdown_event():
+    """Clean up resources when shutting down"""
+    await meeting_rag.cleanup()
 
 def start():
     """Start the FastAPI server"""
