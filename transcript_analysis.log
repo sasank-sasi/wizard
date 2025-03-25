@@ -558,3 +558,7 @@ llm.is-instance[Runnable]
 2025-03-26 03:30:18,565 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
 2025-03-26 03:30:19,114 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
 2025-03-26 03:30:19,116 - INFO - Question answered for meeting annual meeting_20250326_032149: Who is  Mr. Morale?...
+2025-03-26 03:32:44,458 - INFO - Using device: cpu for embeddings
+2025-03-26 03:32:44,640 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-26 03:33:26,746 - INFO - Using device: cpu for embeddings
+2025-03-26 03:33:26,797 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2

@@ -1,0 +1,63 @@
+Here are the curl commands to test different endpoints of your meeting transcription and analysis system:
+
+1. **Upload and Analyze Audio File**:
+```bash
+curl -X POST \
+     -H "Accept: application/json" \
+     -F "file=@/path/to/your/meeting.wav" \
+     http://localhost:8000/analyze-audio
+```
+
+2. **Ask Questions About a Meeting**:
+```bash
+curl -X POST \
+     -H "Content-Type: application/json" \
+     -d '{
+         "meeting_id": "annual_meeting",
+         "question": "What were the key decisions made in this meeting?"
+     }' \
+     http://localhost:8000/ask-question | python -m json.tool
+```
+
+3. **Clear Conversation Context**:
+```bash
+curl -X POST \
+     http://localhost:8000/clear-context/annual_meeting
+```
+
+4. **Complete Test Sequence**:
+```bash
+# Step 1: First analyze an audio file
+curl -X POST \
+     -H "Accept: application/json" \
+     -F "file=@sample.wav" \
+     http://localhost:8000/analyze-audio | python -m json.tool
+
+# Step 2: Ask a question about the meeting
+curl -X POST \
+     -H "Content-Type: application/json" \
+     -d '{
+         "meeting_id": "sample",
+         "question": "What was discussed in the meeting?"
+     }' \
+     http://localhost:8000/ask-question | python -m json.tool
+
+# Step 3: Ask a follow-up question
+curl -X POST \
+     -H "Content-Type: application/json" \
+     -d '{
+         "meeting_id": "sample",
+         "question": "What were the action items?"
+     }' \
+     http://localhost:8000/ask-question | python -m json.tool
+
+# Step 4: Clear the conversation context
+curl -X POST http://localhost:8000/clear-context/sample
+```
+
+Monitor the logs while testing:
+```bash
+tail -f transcript_analysis.log
+```
+
+Note: Replace `/path/to/your/meeting.wav` and `sample.wav` with actual audio file paths on your system.
