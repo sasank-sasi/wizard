@@ -142,14 +142,17 @@ async def transcribe_audio(file_path: str) -> str:
 
 async def analyze_transcript(transcript: str) -> Dict[str, Any]:
     """Analyze transcript using Groq API"""
-    # Escape special characters in transcript
+    # Store original transcript unmodified
+    original_transcript = transcript
+    
+    # Escape special characters only for the prompt
     escaped_transcript = transcript.replace('"', '\\"').replace('\n', ' ')
     
     prompt = (
         "You are an AI meeting assistant analyzing a transcript from an online meeting. "
         "Analyze this meeting transcript and return a JSON object with exactly this structure:\n\n"
         "{\n"
-        f'  "transcript": "{escaped_transcript}",\n'  # Store actual transcript
+        f'  "transcript": {json.dumps(original_transcript)},\n'  # Store complete transcript using json.dumps
         '  "summary": "<comprehensive 5-10 sentence summary of the meeting>",\n'
         '  "key_points": [\n'
         '    "Key decisions made",\n'
@@ -202,11 +205,13 @@ async def analyze_transcript(transcript: str) -> Dict[str, Any]:
             "2. Identifying participants and their responsibilities\n"
             "3. Capturing deadlines and important dates\n"
             "4. Summarizing complex discussions into clear points\n"
+            "5. Preserving the complete transcript in the output\n"  # Added emphasis
             "Always respond with valid JSON matching the exact structure requested.\n"
             "Never include additional text or markdown.\n"
             "Use empty arrays [] for lists with no items.\n"
             "Use empty string \"\" for missing text fields.\n"
-            "Ensure all JSON is properly escaped."
+            "Ensure all JSON is properly escaped.\n"
+            "Include the complete transcript without modifications."
         )
     }
 

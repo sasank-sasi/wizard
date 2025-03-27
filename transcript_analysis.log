@@ -562,3 +562,70 @@ llm.is-instance[Runnable]
 2025-03-26 03:32:44,640 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
 2025-03-26 03:33:26,746 - INFO - Using device: cpu for embeddings
 2025-03-26 03:33:26,797 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-27 15:36:24,051 - INFO - Using device: cpu for embeddings
+2025-03-27 15:36:24,370 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-27 15:37:35,022 - INFO - Using device: cpu for embeddings
+2025-03-27 15:37:35,195 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-27 15:38:56,673 - INFO - Using device: cpu for embeddings
+2025-03-27 15:38:56,725 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-27 15:47:18,722 - INFO - Using device: cpu for embeddings
+2025-03-27 15:47:18,961 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-27 15:48:16,651 - INFO - Using device: cpu for embeddings
+2025-03-27 15:48:16,722 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-27 15:49:10,738 - INFO - Audio preprocessed: lemonmeet.wav.norm.wav
+2025-03-27 15:49:10,741 - INFO - Processing audio file: /var/folders/57/dmb6w3ys4376hkdxj2pvws380000gn/T/lemonmeet.wav.norm.wav
+2025-03-27 15:51:23,248 - INFO - Transcription completed: 7434 characters
+2025-03-27 15:51:25,082 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-27 15:54:03,344 - INFO - Using device: cpu for embeddings
+2025-03-27 15:54:03,671 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-27 15:55:22,766 - INFO - Using device: cpu for embeddings
+2025-03-27 15:55:22,881 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-27 15:56:55,347 - INFO - Audio preprocessed: lemonmeet.wav.norm.wav
+2025-03-27 15:56:55,351 - INFO - Processing audio file: /var/folders/57/dmb6w3ys4376hkdxj2pvws380000gn/T/lemonmeet.wav.norm.wav
+2025-03-27 15:59:07,968 - INFO - Transcription completed: 7434 characters
+2025-03-27 15:59:09,986 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-27 16:02:14,391 - INFO - Using device: cpu for embeddings
+2025-03-27 16:02:14,616 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-27 16:02:57,436 - INFO - Using device: cpu for embeddings
+2025-03-27 16:02:57,486 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-27 16:05:17,719 - INFO - Audio preprocessed: lemonmeet.wav.norm.wav
+2025-03-27 16:05:17,722 - INFO - Processing audio file: /var/folders/57/dmb6w3ys4376hkdxj2pvws380000gn/T/lemonmeet.wav.norm.wav
+2025-03-27 16:07:25,573 - INFO - Transcription completed: 7434 characters
+2025-03-27 16:07:28,884 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-27 16:09:11,553 - INFO - Audio preprocessed: lemonmeet.wav.norm.wav
+2025-03-27 16:09:11,556 - INFO - Processing audio file: /var/folders/57/dmb6w3ys4376hkdxj2pvws380000gn/T/lemonmeet.wav.norm.wav
+2025-03-27 16:10:51,789 - INFO - Transcription completed: 7439 characters
+2025-03-27 16:11:00,970 - INFO - Retrying request to /openai/v1/chat/completions in 0.426343 seconds
+2025-03-27 16:11:11,407 - INFO - Retrying request to /openai/v1/chat/completions in 0.771275 seconds
+2025-03-27 16:11:36,411 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-27 16:15:56,165 - INFO - Using device: cpu for embeddings
+2025-03-27 16:15:56,365 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-27 16:16:36,670 - INFO - Using device: cpu for embeddings
+2025-03-27 16:16:36,729 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-27 16:17:44,021 - INFO - Audio preprocessed: lemonmeet.wav.norm.wav
+2025-03-27 16:17:44,026 - INFO - Processing audio file: /var/folders/57/dmb6w3ys4376hkdxj2pvws380000gn/T/lemonmeet.wav.norm.wav
+2025-03-27 16:19:28,598 - INFO - Transcription completed: 7445 characters
+2025-03-27 16:19:31,293 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-27 16:30:48,099 - INFO - Available files: ['harvard_20250325_160713.json', 'lemonmeet_20250327_161931.json', 'transcript_analysis_20250224_151506.json', 'transcript_analysis_20250224_151841.json', 'annual meeting_20250326_032149.json', 'harvard_20250317_150641.json', 'annual meeting_20250325_170202.json']
+2025-03-27 16:30:48,102 - INFO - Loading meeting data from: lemonmeet_20250327_161931.json
+2025-03-27 16:30:48,677 - INFO - Successfully loaded meeting data for ID: lemonmeet
+2025-03-27 16:30:49,864 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-27 16:30:49,875 - INFO - Question answered for meeting lemonmeet: what is it all about...
+2025-03-27 16:34:46,392 - INFO - Using device: cpu for embeddings
+2025-03-27 16:34:46,616 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-27 16:35:22,663 - INFO - Using device: cpu for embeddings
+2025-03-27 16:35:22,707 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-27 16:37:17,621 - INFO - Available files: ['harvard_20250325_160713.json', 'lemonmeet_20250327_161931.json', 'transcript_analysis_20250224_151506.json', 'transcript_analysis_20250224_151841.json', 'annual meeting_20250326_032149.json', 'harvard_20250317_150641.json', 'annual meeting_20250325_170202.json']
+2025-03-27 16:37:17,622 - INFO - Loading meeting data from: lemonmeet_20250327_161931.json
+2025-03-27 16:37:18,225 - INFO - Successfully loaded meeting data for ID: lemonmeet
+2025-03-27 16:37:19,375 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-27 16:37:19,402 - INFO - Question answered for meeting lemonmeet: what is it all about...
+2025-03-27 16:37:38,292 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-27 16:37:39,083 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-27 16:37:39,084 - INFO - Question answered for meeting lemonmeet: who all have attended this meeting...
+2025-03-27 16:37:49,162 - INFO - Cleared conversation history for meeting: lemonmeet
+2025-03-27 16:37:56,620 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-27 16:37:56,621 - INFO - Question answered for meeting lemonmeet: who all have attended this meeting...
+2025-03-27 16:38:22,182 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-27 16:38:22,768 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-27 16:38:22,770 - INFO - Question answered for meeting lemonmeet: who is Bunkum...
