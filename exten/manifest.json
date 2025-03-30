@@ -1,0 +1,14 @@
+{
+    "manifest_version": 3,
+    "name": "Google Meet Audio Recorder",
+    "version": "1.0",
+    "description": "Records audio from Google Meet",
+    "permissions": ["activeTab", "tabCapture", "downloads"],
+    "host_permissions": ["https://meet.google.com/*"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html"
+    }
+  }

@@ -8,12 +8,13 @@ from datetime import datetime
 import pandas as pd
 import plotly.express as px
 
-# Constants
+# Constants - make sure this matches your FastAPI server
 API_URL = "http://localhost:8000"
 OUTPUT_DIR = "output"
 
 class MeetingAnalyzer:
     def __init__(self):
+        """Initialize the Streamlit app"""
         self.setup_streamlit()
         self.init_session_state()
         self.load_meetings()
@@ -26,16 +27,14 @@ class MeetingAnalyzer:
             layout="wide",
             initial_sidebar_state="expanded"
         )
+        
         st.title("🎙️ Meeting Analyzer & Assistant")
 
     def init_session_state(self):
         """Initialize session state variables"""
-        if 'conversation_history' not in st.session_state:
-            st.session_state.conversation_history = []
-        if 'current_meeting' not in st.session_state:
-            st.session_state.current_meeting = None
-        if 'meetings_data' not in st.session_state:
-            st.session_state.meetings_data = {}
+        for key in ['conversation_history', 'current_meeting', 'meetings_data']:
+            if key not in st.session_state:
+                st.session_state[key] = [] if key == 'conversation_history' else None if key == 'current_meeting' else {}
 
     def load_meetings(self):
         """Load available meeting data"""
@@ -228,7 +227,7 @@ class MeetingAnalyzer:
                     st.success("🧹 Conversation history cleared!")
 
     def run(self):
-        """Run the Streamlit application"""
+        """Main app execution"""
         with st.sidebar:
             st.header("📌 Navigation")
             page = st.radio(
@@ -242,5 +241,6 @@ class MeetingAnalyzer:
             self.qa_section()
 
 if __name__ == "__main__":
+    # Start Streamlit app
     app = MeetingAnalyzer()
     app.run()

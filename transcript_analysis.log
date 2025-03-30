@@ -629,3 +629,47 @@ llm.is-instance[Runnable]
 2025-03-27 16:38:22,182 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
 2025-03-27 16:38:22,768 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
 2025-03-27 16:38:22,770 - INFO - Question answered for meeting lemonmeet: who is Bunkum...
+2025-03-28 01:26:18,967 - INFO - Using device: cpu for embeddings
+2025-03-28 01:26:19,186 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-28 01:27:17,936 - INFO - Using device: cpu for embeddings
+2025-03-28 01:27:18,144 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-28 01:28:24,575 - INFO - Using device: cpu for embeddings
+2025-03-28 01:28:24,644 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-28 14:26:12,361 - INFO - Using device: cpu for embeddings
+2025-03-28 14:26:12,560 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-28 14:27:12,760 - INFO - Using device: cpu for embeddings
+2025-03-28 14:27:12,947 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-28 14:28:23,445 - INFO - Using device: cpu for embeddings
+2025-03-28 14:28:23,502 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-28 14:33:38,029 - INFO - Using device: cpu for embeddings
+2025-03-28 14:33:39,125 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-28 14:35:36,563 - INFO - Using device: cpu for embeddings
+2025-03-28 14:35:37,141 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-28 14:37:36,229 - INFO - Using device: cpu for embeddings
+2025-03-28 14:37:36,422 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-28 14:38:10,225 - INFO - Using device: cpu for embeddings
+2025-03-28 14:38:10,277 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-28 14:38:45,504 - INFO - Using device: cpu for embeddings
+2025-03-28 14:38:45,705 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-28 14:39:24,976 - INFO - Using device: cpu for embeddings
+2025-03-28 14:39:25,029 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-28 14:40:12,252 - INFO - Using device: cpu for embeddings
+2025-03-28 14:40:12,854 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-28 14:42:47,927 - INFO - Using device: cpu for embeddings
+2025-03-28 14:42:48,642 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-28 14:43:52,865 - INFO - Using device: cpu for embeddings
+2025-03-28 14:43:53,428 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-28 14:50:26,634 - INFO - Using device: cpu for embeddings
+2025-03-28 14:50:26,854 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-28 14:51:09,304 - INFO - Using device: cpu for embeddings
+2025-03-28 14:51:09,488 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-28 14:51:40,591 - INFO - Using device: cpu for embeddings
+2025-03-28 14:51:40,651 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-28 14:52:07,824 - INFO - Audio preprocessed: lemonmeet.wav.norm.wav
+2025-03-28 14:52:07,827 - INFO - Processing audio file: /var/folders/57/dmb6w3ys4376hkdxj2pvws380000gn/T/lemonmeet.wav.norm.wav
+2025-03-28 14:54:03,544 - INFO - Transcription completed: 7443 characters
+2025-03-28 14:54:06,600 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-28 15:08:33,525 - INFO - Available files: ['harvard_20250325_160713.json', 'lemonmeet_20250327_161931.json', 'transcript_analysis_20250224_151506.json', 'transcript_analysis_20250224_151841.json', 'annual meeting_20250326_032149.json', 'harvard_20250317_150641.json', 'lemonmeet_20250328_145406.json', 'annual meeting_20250325_170202.json']
+2025-03-28 15:08:33,527 - INFO - Loading meeting data from: harvard_20250325_160713.json
+2025-03-28 15:08:33,533 - ERROR - Error loading meeting data: 'participants'
+2025-03-28 15:08:33,533 - ERROR - Error answering question: Meeting data not found for ID: harvard

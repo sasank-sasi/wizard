@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Google Meet Recorder</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      width: 300px;
+      min-height: 200px;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 p-4">
+  <div class="bg-white rounded-lg shadow-md p-4">
+    <div class="flex items-center justify-between mb-4">
+      <h1 class="text-xl font-bold text-gray-800">Google Meet Recorder</h1>
+      <div id="status-indicator" class="w-3 h-3 rounded-full bg-gray-400"></div>
+    </div>
+    
+    <div id="not-in-meet" class="hidden">
+      <p class="text-gray-600 mb-4">Please navigate to a Google Meet session to start recording.</p>
+    </div>
+    
+    <div id="in-meet" class="hidden">
+      <div class="flex flex-col space-y-4">
+        <div class="flex items-center justify-between">
+          <span class="text-gray-700">Recording Status:</span>
+          <span id="recording-status" class="font-medium text-gray-800">Not Recording</span>
+        </div>
+        
+        <div class="flex items-center justify-between">
+          <span class="text-gray-700">Duration:</span>
+          <span id="duration" class="font-medium text-gray-800">00:00:00</span>
+        </div>
+        
+        <div class="flex space-x-2">
+          <button id="start-btn" class="flex-1 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md transition duration-200">
+            Start Recording
+          </button>
+          <button id="stop-btn" class="flex-1 bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-md transition duration-200 hidden">
+            Stop Recording
+          </button>
+        </div>
+        
+        <div id="download-container" class="hidden">
+          <button id="download-btn" class="w-full bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-md transition duration-200">
+            Download Recording
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="mt-4 text-xs text-gray-500">
+      <p>Note: Recording requires permission to capture your tab.</p>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
+
