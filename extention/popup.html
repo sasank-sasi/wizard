@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Meeting Audio Recorder</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      width: 250px;
+      padding: 20px;
+      background-color: #f9f9f9;
+      color: #333;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 18px;
+      margin-bottom: 15px;
+      color: #202124;
+    }
+
+    button {
+      background-color: #1a73e8;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      margin: 10px 5px;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #1669c1;
+    }
+
+    button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+
+    .status {
+      margin-top: 15px;
+      font-size: 13px;
+      color: #5f6368;
+    }
+
+    .footer {
+      margin-top: 25px;
+      font-size: 10px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <h1>Meet Audio Recorder! </h1>
+  <button id="start">Start Recording</button>
+  <button id="stop" disabled>Stop Recording</button>
+  <div class="status" id="statusText">Ready to record</div>
+  <div class="footer">by Team</div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

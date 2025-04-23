@@ -1,0 +1,15 @@
+{
+    "manifest_version": 3,
+    "name": "Meeting Audio Recorder",
+    "version": "1.0",
+    "permissions": ["tabCapture", "storage", "downloads", "microphone"],
+    "host_permissions": ["<all_urls>"],
+    "action": {
+      "default_popup": "popup.html",
+      "default_title": "Record Google Meet audio"
+    },
+    "background": {
+      "service_worker": "background.js"
+    }
+  }
+  
