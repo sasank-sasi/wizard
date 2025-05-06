@@ -691,3 +691,22 @@ llm.is-instance[Runnable]
 2025-04-24 00:17:01,238 - INFO - Cleared conversation history for meeting: lemonmeet
 2025-04-24 00:17:19,294 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
 2025-04-24 00:17:19,296 - INFO - Question answered for meeting lemonmeet: who all are present...
+2025-04-24 11:22:21,597 - INFO - Using device: cpu for embeddings
+2025-04-24 11:22:21,756 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-04-24 11:23:21,563 - INFO - Using device: cpu for embeddings
+2025-04-24 11:23:21,760 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-04-24 11:24:14,099 - INFO - Using device: cpu for embeddings
+2025-04-24 11:24:14,166 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-04-24 11:27:27,875 - INFO - Audio preprocessed: lemonmeet.wav.norm.wav
+2025-04-24 11:27:27,878 - INFO - Processing audio file: /var/folders/57/dmb6w3ys4376hkdxj2pvws380000gn/T/lemonmeet.wav.norm.wav
+2025-04-24 11:29:11,197 - INFO - Transcription completed: 7439 characters
+2025-04-24 11:29:17,424 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-24 11:30:13,537 - INFO - Available files: ['lemonmeet_20250424_112917.json', 'harvard_20250325_160713.json', 'lemonmeet_20250327_161931.json', 'transcript_analysis_20250224_151506.json', 'transcript_analysis_20250224_151841.json', 'annual meeting_20250326_032149.json', 'harvard_20250317_150641.json', 'lemonmeet_20250328_145406.json', 'lemonmeet_20250424_001601.json', 'annual meeting_20250325_170202.json']
+2025-04-24 11:30:13,538 - INFO - Loading meeting data from: lemonmeet_20250424_112917.json
+2025-04-24 11:30:14,047 - INFO - Successfully loaded meeting data for ID: lemonmeet
+2025-04-24 11:30:15,832 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-24 11:30:15,853 - INFO - Question answered for meeting lemonmeet: what is it all about...
+2025-04-24 11:30:29,305 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-24 11:30:30,738 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-24 11:30:30,745 - INFO - Question answered for meeting lemonmeet: who alll are present...
+2025-04-24 11:30:37,033 - INFO - Cleared conversation history for meeting: lemonmeet
